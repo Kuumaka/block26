@@ -1,24 +1,23 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ContactList from "./ContactList";
+import SelectedContact from "./SelectedContact";
+import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [selectedContactId, setSelectedContactId] = useState(null);
 
   return (
     <div>
-      Placeholder
+      {selectedContactId ? (
+        <SelectedContact
+          contactId={selectedContactId}
+          onBack={() => setSelectedContactId(null)}
+        />
+      ) : (
+        <ContactList onContactSelect={setSelectedContactId} />
+      )}
     </div>
-  )
-}
-
-export default App
-
-export default function App() {
-  return (
-    <>
-      <ContactList />
-    </>
   );
 }
+
+export default App;

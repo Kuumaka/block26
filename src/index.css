@@ -66,3 +66,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+table {
+  border-spacing: 0 10px;
+}
+
+td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+tr {
+  background-color: blue;
+}
